@@ -17,8 +17,8 @@ plot2 <- function(){
                                                                          "Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3"))
   # Plot2
   # Save the plot to a PNG file with a width of 480 pixels and a height of 480 pixels
-  # Use the default background color, which is white (Omit the bg argument, bg = "white")
-  png(filename = "plot2.png", width = 480, height = 480)
+  # Put the background color as transparent
+  png(filename = "plot2.png", width = 480, height = 480, bg="transparent")
   # Convert character variables Date and Time to Date/Time using dmy_hms()
   library(lubridate)
   dt$Full_date <- dmy_hms(paste(dt$Date,dt$Time)) 

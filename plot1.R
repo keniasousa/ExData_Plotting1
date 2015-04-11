@@ -17,8 +17,8 @@ plot1 <- function(){
                        "Voltage","Global_intensity","Sub_metering_1","Sub_metering_2","Sub_metering_3"))
   # Plot1
   # Save the plot to a PNG file with a width of 480 pixels and a height of 480 pixels
-  # Use the default background color, which is white (Omit the bg argument, bg = "white")
-  png(filename = "plot1.png", width = 480, height = 480)
+  # Put the background color as transparent
+  png(filename = "plot1.png", width = 480, height = 480, bg="transparent")
   # Plot a histogram of the distribution of the Global Active Power 
   hist(dt$Global_active_power, col="red", main="Global Active Power", xlab="Global Active Power (kilowatts)", ylab="Frequency")
   # Close the file device

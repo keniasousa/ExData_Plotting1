@@ -22,8 +22,8 @@ plot3 <- function(){
   
   # Plot3
   # Save the plot to a PNG file with a width of 480 pixels and a height of 480 pixels
-  # Use the default background color, which is white (Omit the bg argument, bg = "white")
-  png(filename = "plot3.png", width = 480, height = 480)
+  # Put the background color as transparent
+  png(filename = "plot3.png", width = 480, height = 480, bg="transparent")
   # Construct a plot  of the distribution of 3 Energy sub metering in time
   plot(strptime(dt$Full_date, format="%Y-%m-%d %H:%M:%S"),dt$Sub_metering_1, type="n", xlab="", ylab="Energy sub metering")
   lines(strptime(dt$Full_date, format="%Y-%m-%d %H:%M:%S"),dt$Sub_metering_1, col="black")

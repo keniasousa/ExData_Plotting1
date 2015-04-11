@@ -19,8 +19,8 @@ plot4 <- function(){
 
   # Plot4
   # Save the plot to a PNG file with a width of 480 pixels and a height of 480 pixels
-  # Use the default background color, which is white (Omit the bg argument, bg = "white")
-  png(filename = "plot4.png", width = 480, height = 480)
+  # Put the background color as transparent
+  png(filename = "plot4.png", width = 480, height = 480, bg="transparent")
   
   # Organise the plots in 2 rows and 2 columns
   # plots are put across the rows, it starts in the first row then in the second row
