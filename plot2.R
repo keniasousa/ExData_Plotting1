@@ -6,7 +6,7 @@ plot2 <- function(){
   # skip="string" searches for "string" in the file and starts on that line
   # The data set has records for each minute in a day
   # Number of rows to be read = 1440 minutes/day * 2 days = 2880
-  # Download the dataset referenced in the readme file 
+  # To run this script, download the dataset referenced in the readme file 
   # and save it to the working directory
   library(data.table)
   dt <- fread("household_power_consumption.txt", header=F, sep=";", na.strings = "?", 
@@ -19,10 +19,13 @@ plot2 <- function(){
   # Save the plot to a PNG file with a width of 480 pixels and a height of 480 pixels
   # Use the default background color, which is white (Omit the bg argument, bg = "white")
   png(filename = "plot2.png", width = 480, height = 480)
-  # Convert the Date and Time variables to Date/Time classes using strptime() and as.Date()
+  # Convert character variables Date and Time to Date/Time using dmy_hms()
   library(lubridate)
   dt$Full_date <- dmy_hms(paste(dt$Date,dt$Time)) 
+  # Construct a plot  of the distribution of Global Active Power in time
   plot(strptime(dt$Full_date, format="%Y-%m-%d %H:%M:%S"),dt$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)")
   # Close the file device
   dev.off()
+  # Remove the data set from the working environment
+  rm(dt)
 }
